@@ -24,7 +24,15 @@ public class MainUI {
         System.out.println("the cost of a margarita with extra cheese is " + p2.calculateCost());
 
         System.out.println("\ncreating a margarita with extra cheese and extra jalapenos..");
-        Pizza p3 = new Jalapenos(new Cheese(new MargaritaPizza()));
+
+        // can be like this:
+        //Pizza p3 = new Jalapenos(new Cheese(new MargaritaPizza()));
+
+        // or like this: (better)
+        Pizza p3 = new MargaritaPizza();
+        p3 = new Cheese(p3);
+        p3 = new Jalapenos(p3);
+
         System.out.println("the cost of a margarita with extra cheese and extra jalapenos is " + p3.calculateCost());
 
     }
